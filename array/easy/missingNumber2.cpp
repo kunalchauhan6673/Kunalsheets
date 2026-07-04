@@ -1,11 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
-int maxConsecutiveOnes(int a[], int n){
- int ans=0;
- for(int i=1;i<=n+1;i++){
-    ans^=i;
- }
+int missingNumber(int a[], int n){
+ int ans=n+1;
   for(int i=0;i<n;i++){
+    ans^=(i+1);
     ans^=a[i];
  }
  return ans;
@@ -13,7 +11,7 @@ int maxConsecutiveOnes(int a[], int n){
 int main(){
  int a[]={1,2,3,4,5,6,7,8,10};
  int n=sizeof(a)/sizeof(a[0]);
- cout<<maxConsecutiveOnes(a,n)<<" ";
+ cout<<missingNumber(a,n)<<" ";
  return 0;
 }
 
