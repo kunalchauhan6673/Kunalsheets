@@ -13,17 +13,28 @@ void moves(int a[], int n) {
     }
 }
 
-void movesN(int a[], int n) {
- // using two pointers
- int j=0; // keeps the index of zeroes
- for(int i=0;i<n;i++){
-    if(a[i]!=0){
-        if(i!=j){
-            swap(a[i],a[j]);
-        }
-        j++;
-    }
- }
+void moveZeroesToEnd(int a[], int n){
+  int j=0;
+  int i=j+1;
+  while(i<n){
+   if(a[j]!=0) // get j to the position of 0
+   {  
+    j++;
+    i++;
+   }
+   else{ // once j is at 0, get i to the position of non-zero
+    if(a[i]!=0) 
+  {
+    int temp=a[i];
+    a[i]=a[j];
+    a[j]=temp;
+    i++; j++;
+   }
+   else{
+    i++;
+   }
+   }
+  }
 }
 
 int main() {
@@ -32,7 +43,7 @@ int main() {
     int n = sizeof(a) / sizeof(a[0]);
 
      // moves(a, n);
-     movesN(a,n);
+     moveZeroesToEnd(a,n);
      for(int i=0;i<n;i++){
         cout<<a[i]<<" ";
      }
