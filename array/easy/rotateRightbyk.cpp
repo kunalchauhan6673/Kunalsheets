@@ -1,16 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
+void reverseArray(int a[], int l, int h){
+ while(l<h){
+    swap(a[l],a[h]);
+    l++; h--;
+ }
+}
 void rotateRightbyk(int a[], int n, int k){
- k=k%n; // normalize
- for(int i=0;i<n/2;i++){
-    swap(a[i],a[n-1-i]);
- }
- for(int i=0;i<k/2;i++){
-    swap(a[i],a[k-1-i]);
- }
-  for(int i=k;i<k+(n-k)/2;i++){
-    swap(a[i],a[k+n-1-i]);
- }
+ k%=n;
+ reverseArray(a,0,n-1);
+ reverseArray(a,0,k-1);
+ reverseArray(a,k,n-1);
 }
 int main(){
  int a[]={1,2,3,4,5};
