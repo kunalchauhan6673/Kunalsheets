@@ -3,18 +3,35 @@ using namespace std;
 void unionSortedArrays(int a[],int an, int b[],int bn,int c[]){
   int i,j,k; k=i=j=0;
   while(i<an && j<bn){
-    if(a[i]>b[j]){
-        c[k++]=b[j++];
-    } else{
-       c[k++]=a[i++];
+    if(a[i] < b[j]){
+        if(k==0 || c[k-1]!=a[i])
+            c[k++]=a[i];
+        i++;
     }
-  }
-  while(i<an){
-    c[k++]=a[i++];
-  }
-  while(j<bn){
-    c[k++]=b[j++];
-  }
+    else if(a[i] > b[j]){
+        if(k==0 || c[k-1]!=b[j])
+            c[k++]=b[j];
+        j++;
+    }
+    else{
+        if(k==0 || c[k-1]!=a[i])
+            c[k++]=a[i];
+        i++;
+        j++;
+    }
+}
+
+while(i<an){
+    if(k==0 || c[k-1]!=a[i])
+        c[k++]=a[i];
+    i++;
+}
+
+while(j<bn){
+    if(k==0 || c[k-1]!=b[j])
+        c[k++]=b[j];
+    j++;
+}
 }
 int main(){
  int a[]={1,3,5,7,9};
