@@ -17,7 +17,7 @@ int longestSubarray(vector<int> &nums, int k)
 
 int main()
 {
-    vector<int> a = { 10,1,1,1,1,1,5 };
+    vector<int> a = { -5,10,1,1,1,1,1,5 };
     int k = 10;
     int len = longestSubarray(a, k);
 

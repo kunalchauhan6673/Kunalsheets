@@ -1,3 +1,8 @@
+// note: here we are returning the numbers which sum up to the target, 
+// if we want to return the indexes of those numbers, we can do that too, 
+// but the array should be sorted in that case.
+// On leetcode the two sum ques requires us to return the indexes of the numbers, 
+// so we can use hashmap approach to do that but not the two pointer solution!
 #include<bits/stdc++.h>
 using namespace std;
 int ans[2]={-1};
