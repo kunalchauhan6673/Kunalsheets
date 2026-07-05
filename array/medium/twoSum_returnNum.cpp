@@ -36,7 +36,8 @@ int hashmap(int a[], int n, int t){
 
 int optmized(int a[],int n, int t){
  // tc: o(nlogn) and sc is o(1);
- /*Note: Same logic can be used for two sum, return indexes, only if the array given is in sorted order!*/
+ /*Note: Same logic can be used for two sum, return indexes, 
+ only if the array given is in sorted order!*/
  int i=0; int j=n-1;
  while(i<=j){
     if(a[i]+a[j]==t){

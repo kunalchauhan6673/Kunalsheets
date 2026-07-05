@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
+// brute force
 int longestSubarray(vector<int> &nums, int k)
-{      // TC: o(n^2) and sc: o(1)
+{      // TC: o(n^2) and sc: o(1) for both arrays, only positives and pos,neg,zero array
         int n = nums.size();
         int maxLength = 0;
         for(int i=0;i<n;i++){
@@ -14,7 +15,6 @@ int longestSubarray(vector<int> &nums, int k)
         }
         return maxLength;
 }
-
 int main()
 {
     vector<int> a = { -5,10,1,1,1,1,1,5 };
