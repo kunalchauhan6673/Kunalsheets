@@ -60,3 +60,12 @@ int main(){
  cout<<LCS_optimal(a);
 }
 
+/*
+Brute Force:
+TC = O(n³)
+SC = O(1)
+
+Optimal (using unordered_set):
+TC = O(n) average, O(n²) worst case (due to hash collisions)
+SC = O(n)
+*/
