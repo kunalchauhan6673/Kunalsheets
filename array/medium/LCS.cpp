@@ -23,8 +23,40 @@ int LCS_Brute(vector<int> a){
  }
  return ans;
 }
+// Idea for O(n) solution using set:
+// • Store all numbers in an unordered_set for fast searching.
+// • Start counting only from the first number of a consecutive sequence.
+// • A number is the first in a sequence if its previous number (a - 1) is NOT present in the set.
+// • Keep checking for the next number (a + 1) until the sequence ends.
+// • Store the maximum sequence length.
+
+// Key Condition:
+// if (st.find(it - 1) == st.end())
+// → It means there is no previous consecutive number.
+// → So, 'it' is the starting point of a new sequence.
+// → This avoids counting the same sequence multiple times
+int LCS_optimal(vector<int> a){
+ if(!a.size()) return 0;
+ unordered_set<int> Set;
+ for(int i=0;i<a.size();i++){
+    Set.insert(a[i]);
+ }
+ int maxLength=1;
+ for(auto it: Set){
+    if(Set.find(it-1)==Set.end()){ // works only when it-1 is not present in the set
+       int curr=it;
+       int cnt=1;
+       while(Set.find(curr+1)!=Set.end()){ // works only when it+1 is present in the set
+        cnt++;
+        curr++;
+       }
+       maxLength=max(maxLength,cnt);
+    }
+ }
+ return maxLength;
+}
 int main(){
  vector<int> a={100,4,200,1,3,2};
- cout<<LCS_Brute(a);
+ cout<<LCS_optimal(a);
 }
 
