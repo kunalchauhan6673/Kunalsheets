@@ -1,5 +1,6 @@
 // letcode link: https://leetcode.com/problems/sequential-digits/description/
-// dirty solution, but it works
+// dirty solution, but it works, Tc: O(36), Sc: O(36) means O(1) because 36 is constant,
+// we can also generate the list of sequential digits using a loop, but this is easier and faster to implement.
 class Solution {
 public:
     vector<int> sequentialDigits(int low, int high) {
