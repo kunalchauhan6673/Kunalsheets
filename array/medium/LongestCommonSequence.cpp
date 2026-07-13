@@ -1,5 +1,6 @@
 /*Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
 You must write an algorithm that runs in O(n) time.*/
+// note: this isnt lcs that we studied in dp, both are different!!
 // https://leetcode.com/problems/longest-consecutive-sequence/description/
 #include<bits/stdc++.h>
 using namespace std;
