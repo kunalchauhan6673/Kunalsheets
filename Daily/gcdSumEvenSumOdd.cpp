@@ -15,3 +15,11 @@ public:
         return gcd(sumOdd, sumEven);
     }
 };
+
+// note: lol even this works:
+// class Solution {
+// public:
+//     int gcdOfOddEvenSums(int n) {
+//         return n;
+//     }
+// };
